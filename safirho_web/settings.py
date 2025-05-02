@@ -127,3 +127,5 @@ CSRF_TRUSTED_ORIGINS = [
     'https://www.safirho.mx',
 ]
 
+LOGIN_URL = '/login/'
+LOGIN_REDIRECT_URL = '/'
