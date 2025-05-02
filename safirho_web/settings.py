@@ -9,6 +9,7 @@ https://docs.djangoproject.com/en/5.2/topics/settings/
 For the full list of settings and their values, see
 https://docs.djangoproject.com/en/5.2/ref/settings/
 """
+import os
 
 from pathlib import Path
 
@@ -25,8 +26,7 @@ SECRET_KEY = 'django-insecure-3x$-ht7ha!9vyo1w)dp7y@d%q!5jk=d(vuhq7^=3o+9bg8-nip
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['*']
-
+ALLOWED_HOSTS = ['safirho.mx', 'www.safirho.mx', '.azurewebsites.net']
 
 # Application definition
 
@@ -55,7 +55,7 @@ ROOT_URLCONF = 'safirho_web.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [os.path.join(BASE_DIR, 'principal', 'templates')],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -124,7 +124,6 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 CSRF_TRUSTED_ORIGINS = [
     'https://safirho.mx',
-    'https://www.safirho.mx',  # si usas el subdominio también
+    'https://www.safirho.mx',
 ]
-
 
